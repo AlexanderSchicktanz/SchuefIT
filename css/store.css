@@ -1,0 +1,163 @@
+#store{
+    position: relative;
+    top: 10%;
+    width: 80vw;
+    left: 50vw;
+    transform: translateX(-50%);
+    border-radius: 1.25vw;
+    background: linear-gradient(315deg, #FF0000, #FF0000, #FF0000, #FFFFFF);
+    background-size: 600% 600%;
+    opacity: .8;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1;
+    font-size: 2.5vw;
+    transition: box-shadow, .2s;
+}
+#store:hover{
+  box-shadow: 0 0px 30px rgb(0,0,0);
+}
+store:focus{
+  cursor: pointer;
+}
+p[contenteditable] {
+    outline: 0px solid transparent;
+    padding-left: 1.5%;
+}
+
+#items{
+    position: absolute;
+    top: 30vh;
+    opacity: 1;
+    height: 50vh;
+    left: 50vw;
+    transform: translateX(-46.5%);
+    min-width: 84vw;
+}
+#items>#item{
+    display: inline-block;
+    width: 25vw;
+    height: 50vh;
+}
+
+#name{
+    position: absolute;
+    transform: translate(10vw,-5vh);
+    z-index: 10;
+    color: white;
+    font-size: larger;
+}
+  
+  .card {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    transition: scale 100ms;
+    align-items: center;
+  }
+  
+  .card .card-front-image {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .card .card-image {
+    align-self: center;
+    padding-left: 15%;
+    height: 50vh;
+    width: 75%;
+    aspect-ratio: 2 / 3;
+  }
+
+  
+  .card-faders {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 1500ms;
+    pointer-events: none;
+  }
+  
+  .card:hover .card-faders {
+    opacity: 1;
+  }
+  .card:hover{
+    filter: brightness(1.2);
+    scale: 1.01;
+  }
+  
+  .card:active {
+    scale: 0.98;
+  }
+  
+  .card-fader {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+  
+  .card-fader:nth-child(odd) {
+    animation: fade-left 3s linear infinite;
+  }
+  
+  .card-fader:nth-child(even) {
+    animation: fade-right 3s linear infinite;
+  }
+  
+  .card-fader:is(:nth-child(3), :nth-child(4)) {
+    animation-delay: 750ms;
+  }
+  
+  .card-fader:is(:nth-child(5), :nth-child(6)) {
+    animation-delay: 1500ms;
+  }
+  
+  .card-fader:is(:nth-child(7), :nth-child(8)) {
+    animation-delay: 2250ms;
+  }
+  
+
+  
+  @keyframes fade-left {
+    from {
+      scale: 1;
+      translate: 0%;
+      opacity: 1;
+    }
+    
+    to {
+      scale: 0.8;
+      translate: -20%;
+      opacity: 0;
+    }
+  }
+  
+  @keyframes fade-right {
+    from {
+      scale: 1;
+      translate: 0%;
+      opacity: 1;
+    }
+    
+    to {
+      scale: 0.8;
+      translate: 20%;
+      opacity: 0;
+    }
+  }
+
+  img:not([logo]){
+    object-fit: none;
+  }
+
+  [data-placeholder]:empty:before{
+  content: attr(data-placeholder);
+  color: #888;
+  font-style: italic;
+}
